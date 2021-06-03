@@ -6,7 +6,7 @@ class deploy {
         def response = cmd.execute().text
         return response
     }
-    static void main(String[] args) {
-        println(myData("HEAD"))
-    }
+//     static void main(String[] args) {
+//         println(myData("HEAD"))
+//     }
 }
