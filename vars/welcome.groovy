@@ -1,3 +1,3 @@
 def call(name) {
-    println("Welcome $(name)")
+    echo "Welcome $(name)"
 }
