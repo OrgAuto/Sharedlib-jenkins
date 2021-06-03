@@ -1,5 +1,7 @@
 package com.org
 class deploy implements Serializable {
+    def steps
+    deploy(steps) {this.steps = steps}
     def myData(commitSha) {
         println("The changed files are : \n")
         def cmd = 'git log -m -1 ' + commitSha
