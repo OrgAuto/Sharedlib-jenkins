@@ -1,6 +1,5 @@
 def myData(String commitSha) {
     println("The changed files are : \n")
-    def cmd = ['git log -m -1 ' + "${commitSha}"]
-    def response = cmd.execute().text
+    def response = ['git', 'log', '-1', "${commitSha}"].execute().text
     return response
 }
