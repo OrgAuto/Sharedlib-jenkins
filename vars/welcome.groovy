@@ -6,6 +6,6 @@ def call() {
                     ls -l
             '''
 	    }
-    File f = new File("env.workspace/Logs/commit.log")
+    File f = new File("Logs/commit.log")
     f.readLines()
 }
