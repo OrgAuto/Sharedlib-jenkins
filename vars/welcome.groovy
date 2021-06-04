@@ -7,7 +7,7 @@ def call() {
             '''
         println("${WORKSPACE}")
         File f = new File('Logs/commit.log')
-        f.readLines()
+        println(f.path)
 	    }
 
 }
