@@ -3,9 +3,11 @@ def call() {
     script{
             sh '''
                     git log -m -1 --name-status HEAD > "Logs/commit.log"
-                    ls -l
+                    ls -l Logs/
             '''
+        println("${WORKSPACE}")
+        File f = new File('Logs/commit.log')
+        f.readLines()
 	    }
-    File f = new File('"${WORKSPACE}"/Logs/commit.log')
-    f.readLines()
+
 }
