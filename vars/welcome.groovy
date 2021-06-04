@@ -6,7 +6,7 @@ def call() {
               git log -m -1 --name-status --pretty=format: HEAD > "${WORKSPACE}"/Logs/commit.log
             '''
         }
-    def repo_dir = sh 'git rev-parse --show-toplevel'
+    def repo_dir = sh(returnStdout: true, script: 'git rev-parse --show-toplevel').trim()
     println("${repo_dir}")
     def dir = "${WORKSPACE}"
     def commit_file = dir + "/Logs/commit.log"
