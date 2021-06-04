@@ -11,6 +11,7 @@ def call() {
         def commit_file = dir + "/Logs/commit.log"
         File f = new File(commit_file)
         println(f.path)
+        println(f.readLines())
 	    }
 
 }
