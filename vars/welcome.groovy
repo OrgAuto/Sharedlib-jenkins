@@ -2,13 +2,12 @@ def call() {
     echo "Welcome "
     script{
             sh '''
-                    git log -m -1 --name-status HEAD > "Logs/commit.log"
+                    git log -m -1 --name-status HEAD > '"${WORKSPACE}"/Logs/commit.log'
                     ls -l Logs/
-                    echo "${WORKSPACE}"
             '''
         println("${WORKSPACE}")
-//        File f = new File('Logs/commit.log')
-//        f.readLines()
+        File f = new File('"${WORKSPACE}"/Logs/commit.log')
+        f.readLines()
 	    }
 
 }
