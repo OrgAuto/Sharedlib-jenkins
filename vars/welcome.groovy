@@ -4,9 +4,12 @@ def call() {
             sh '''
                     git log -m -1 --name-status HEAD > "${WORKSPACE}"/Logs/commit.log
                     ls -l Logs/
+                    pwd
             '''
         println("${WORKSPACE}")
-        File f = new File('Logs/commit.log')
+        def dir = "${WORKSPACE}"
+        def commit_file = dir + "/Logs/commit.log"
+        File f = new File(commit_file)
         println(f.path)
 	    }
 
