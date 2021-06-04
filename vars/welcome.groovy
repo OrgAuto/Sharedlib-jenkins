@@ -7,7 +7,7 @@ def call() {
             '''
         }
     String git_cmd = 'git log -m -1 --name-status --pretty=format: HEAD'
-    def delta_files = sh(returnStdout: true, script: git_cmd)
+    def delta_files = sh(returnStdout: true, script: 'git log -m -1 --name-status --pretty=format: HEAD')
     println(delta_files.toString().split())
     def repo_dir = sh(returnStdout: true, script: 'git rev-parse --show-toplevel').trim()
     println("${repo_dir}")
