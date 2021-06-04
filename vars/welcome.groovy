@@ -1,11 +1,14 @@
 #!/usr/bin/env groovy
 def call() {
     echo "Welcome "
-    script{
-            sh '''
-              git log -m -1 --name-status --pretty=format: HEAD > "${WORKSPACE}"/Logs/commit.log
-            '''
-        }
+//    script{
+//            sh '''
+//              git log -m -1 --name-status --pretty=format: HEAD > "${WORKSPACE}"/Logs/commit.log
+//            '''
+//        }
+    def git_cmd = 'git log -m -1 --name-status --pretty=format: HEAD'
+    def delta_files = sh(returnStdout: true, script: git_cmd).trim()
+    println(delta_files.split())
     def repo_dir = sh(returnStdout: true, script: 'git rev-parse --show-toplevel').trim()
     println("${repo_dir}")
     def dir = "${WORKSPACE}"
