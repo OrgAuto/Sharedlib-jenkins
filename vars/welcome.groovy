@@ -6,6 +6,8 @@ def call() {
               git log -m -1 --name-status --pretty=format: HEAD > "${WORKSPACE}"/Logs/commit.log
             '''
         }
+    String repo_dir = sh 'git rev-parse --show-toplevel'
+    println(repo_dir)
     def dir = "${WORKSPACE}"
     def commit_file = dir + "/Logs/commit.log"
     File f = new File(commit_file)
