@@ -18,9 +18,9 @@ def call() {
     def commit_file = repo_dir + "/" + "commit.log"
     File f = new File(commit_file)
     f.write(modified_files)
-    def scripts = []
-    for(line in f.readLines()){
-        scripts.add(line.split())
-    }
-    println(scripts)
+//    def scripts = []
+//    for(line in f.readLines()){
+//        scripts.add(line.split())
+//    }
+//    println(scripts)
 }
