@@ -1,6 +1,6 @@
 package org.local
 
-class deploy {
+class Test {
     static myData(String commitSha) {
         return commitSha
 //        println("The changed files are : \n")
