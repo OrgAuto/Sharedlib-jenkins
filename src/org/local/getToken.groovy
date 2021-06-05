@@ -1,7 +1,7 @@
 package org.local
 
 class Get {
-    static token() {
-        println("Hello from getToken Class")
+    static token(name) {
+        println("Hello from getToken Class ${name}")
     }
 }
