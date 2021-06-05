@@ -15,8 +15,8 @@ def call() {
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
-    changed_scripts = new File("commit.log").write(modified_files)
-    def logFile = new File("commit.log").readLines()
+    changed_scripts = new File(repo_dir + "/" + "commit.log").write(modified_files)
+    def logFile = new File(repo_dir + "/" + "commit.log").readLines()
     def scripts = []
     for(line in logFile){
         scripts.add(line.split())
