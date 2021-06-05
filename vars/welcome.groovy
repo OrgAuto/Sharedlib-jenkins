@@ -15,10 +15,8 @@ def call() {
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
-    println(repo_dir)
-    println(current_commit_sha)
-    println(modified_files)
-    println(new_files)
-    println(deleted_files)
+    ArrayList deltaList = new ArrayList()
+    deltaList.add(cmd_modified.split())
+    println(deltaList)
 
 }
