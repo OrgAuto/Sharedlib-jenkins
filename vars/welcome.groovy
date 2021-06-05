@@ -7,7 +7,9 @@ def call() {
     println("${repo_dir}")
     def git_name_only_cmd = "git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD"
     def response = sh(returnStdout: true, script: git_name_only_cmd)
-    println("${response}")
+    def arr = []
+    arr.add("${response}")
+    println(arr)
 
 //    def dir = "${WORKSPACE}"
 //    def commit_file = dir + "/Logs/commit.log"
