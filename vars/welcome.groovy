@@ -15,8 +15,18 @@ def call() {
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
-    def deltaList = []
-    deltaList.add(cmd_modified.split())
-    println(deltaList)
+    def changed_scripts = new File("commit.log").write(modified_files)
+    def lines = new File("commit.log").readLines()
+    def result = []
+    for (x in lines){
+        result.add(x.split())
+    }
+    def scripts = []
+    result.each { element ->
+        {
+            scripts.add(element)
+        }
+    }
+    println(scripts)
 
 }
