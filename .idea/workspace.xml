@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2a1d83f-2f9c-4008-ac61-98f7e69ef07b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/vars/org/local/deploy.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/vars/org/local/deploy.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/org/deploy.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vars/org/local/deploy.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/local/deploy.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +32,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/vars/org/local" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
