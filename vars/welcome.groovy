@@ -15,7 +15,7 @@ def call() {
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
-    ArrayList deltaList = new ArrayList()
+    def deltaList = []
     deltaList.add(cmd_modified.split())
     println(deltaList)
 
