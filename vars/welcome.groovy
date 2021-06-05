@@ -1,23 +1,24 @@
 #!/usr/bin/env groovy
+
+
 def call() {
     println("Welcome ")
-    def delta_files = sh(returnStdout: true, script: 'git log -m -1 --name-status --pretty=format: HEAD')
-    println("${delta_files}")
-    def repo_dir = sh(returnStdout: true, script: 'git rev-parse --show-toplevel').trim()
-    println("${repo_dir}")
-    def git_name_only_cmd = "git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD"
-    def response = sh(returnStdout: true, script: git_name_only_cmd)
-    def arr = []
-    arr.add("${response}")
-    println(arr)
+    String cmd_modified = "git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD"
+    String cmd_added = "git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD"
+    String cmd_deleted = "git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD"
+    String cmd_top_level = "git rev-parse --show-toplevel"
+    String cmd_commit = "git rev-parse HEAD"
 
-//    def dir = "${WORKSPACE}"
-//    def commit_file = dir + "/Logs/commit.log"
-//    File f = new File(commit_file)
-//    ArrayList arr = new ArrayList()
-//    for(i in f.readLines()){
-//        arr.add(i)
-//    }
-//    println(arr)
-//    f.delete()
+    String repo_dir = sh (returnStdout: true, script: cmd_top_level)
+    String current_commit_sha = sh(returnStdout: true, script: cmd_commit)
+    String modified_files = sh(returnStdout: true, script: cmd_modified)
+    String new_files = sh(returnStdout: true, script: cmd_added)
+    String deleted_files = sh(returnStdout: true, script: cmd_deleted)
+
+    println(repo_dir)
+    println(current_commit_sha)
+    println(modified_files)
+    println(new_files)
+    println(deleted_files)
+
 }

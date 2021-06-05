@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 def myData(String commitSha) {
     println("The changed files are : \n")
     def delta_files = sh(returnStdout: true, script: 'git log -m -1 --name-status --pretty=format: HEAD')
