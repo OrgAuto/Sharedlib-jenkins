@@ -4,8 +4,8 @@
 def call() {
     println("Welcome ")
     String cmd_modified = "git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD"
-    String cmd_added = "git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD"
-    String cmd_deleted = "git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD"
+    String cmd_added = "git log -m -1 --name-only --pretty=format: --diff-filter=A HEAD"
+    String cmd_deleted = "git log -m -1 --name-only --pretty=format: --diff-filter=D HEAD"
     String cmd_top_level = "git rev-parse --show-toplevel"
     String cmd_commit = "git rev-parse HEAD"
 
