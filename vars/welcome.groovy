@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-
+import java.nio.file.Paths
 
 def call() {
     println("Welcome ")
@@ -15,9 +15,10 @@ def call() {
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
-    def commit_file = repo_dir + "/" + "commit.log"
-    File f = new File(commit_file)
-    f.write(modified_files)
+    def changed_script = Paths.get(repo_dir, "commit.log")
+    changed_script.write(modified_files)
+
+
 //    def scripts = []
 //    for(line in f.readLines()){
 //        scripts.add(line.split())
