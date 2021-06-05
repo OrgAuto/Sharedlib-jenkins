@@ -15,7 +15,7 @@ def call() {
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
-    def changed_script = Paths.get(repo_dir, "commit.log")
+    def changed_script = Paths.get(repo_dir, "/Logs/commit.log")
     changed_script.write(modified_files)
 
 
