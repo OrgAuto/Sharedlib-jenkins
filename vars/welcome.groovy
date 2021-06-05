@@ -16,17 +16,10 @@ def call() {
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
     def changed_scripts = new File("commit.log").write(modified_files)
-    def lines = new File("commit.log").readLines()
-    def result = []
-    for (x in lines){
-        result.add(x.split())
-    }
+    def logFile = new File(changed_scripts).readLines()
     def scripts = []
-    result.each { element ->
-        {
-            scripts.add(element)
-        }
+    for(line in logFile){
+        scripts.add(line.split())
     }
     println(scripts)
-
 }
