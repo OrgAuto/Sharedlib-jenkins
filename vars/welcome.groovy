@@ -17,14 +17,14 @@ def call() {
     String cmd_added = "git log -m -1 --name-only --pretty=format: --diff-filter=A ${current_commit_sha}"
     String cmd_deleted = "git log -m -1 --name-only --pretty=format: --diff-filter=D ${current_commit_sha}"
 
-    String modified_files = sh(returnStdout: true, script: cmd_modified).trim()
-    String new_files = sh(returnStdout: true, script: cmd_added).trim()
-    String deleted_files = sh(returnStdout: true, script: cmd_deleted).trim()
+    def modified_files = sh(returnStdout: true, script: cmd_modified).trim()
+    def new_files = sh(returnStdout: true, script: cmd_added).trim()
+    def deleted_files = sh(returnStdout: true, script: cmd_deleted).trim()
 
     String LogsPath = new File("${repo_dir}", "/Logs").toString();
     println(LogsPath)
     File f = new File(LogsPath.trim() + "commit.log")
-    println(deleted_files.split().length + " Deleted Files \n")
+    println("${deleted_files}".split().length + " Deleted Files \n")
 
 //    for (val in deleted_files.split()){
 //        println(val)
@@ -34,7 +34,7 @@ def call() {
 //    for (file in modified_files){
 //        println("Modified: " + "${file}")
 //    }
-    for (added in new_files){
+    for (added in "${new_files}"){
         println("Added: " + "${added}")
     }
 
