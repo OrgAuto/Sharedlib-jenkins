@@ -30,8 +30,8 @@ def call() {
 //    }
 //    println(modified_files)
 //    println(new_files)
-    f.append(modified_files)
-    f.append(new_files)
+    f.append(modified_files, new_files)
+//    f.append(new_files)
     println(f.readLines())
     for (i in f.readLines()) {
         Path my_path = Paths.get(i)
