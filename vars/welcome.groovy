@@ -38,7 +38,7 @@ def call() {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
         def extension = ("${fileName}".split("."))
-        println(extension)
+        println(extension[0])
         println("File basename is : " + fileName[0]-extension)
 
     }
