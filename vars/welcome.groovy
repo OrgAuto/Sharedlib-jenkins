@@ -31,18 +31,16 @@ def call() {
 //    }
 //    println(modified_files)
 //    println(new_files)
-//    f.write(modified_files)
-//    f.append(", ")
-//    f.append(new_files)
-//    println(f.readLines())
-    def arr = []
-    arr.add(modified_files)
-    arr.add(new_files)
-    println(arr)
-//    for (i in arr) {
-//        Path path = Paths.get(i)
-//        println(i)
-//    }
+    f.write(modified_files)
+    f.append(", ")
+    f.append(new_files)
+    def arr = f.readLines()
+    println(arr[0])
 
-//    f.delete()
+    for (i in arr) {
+        Path path = Paths.get(i)
+        println(path)
+    }
+
+    f.delete()
 }
