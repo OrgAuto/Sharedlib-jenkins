@@ -14,18 +14,5 @@ def call() {
     String modified_files = sh(returnStdout: true, script: cmd_modified)
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
-
-    def changed_script = Paths.get(repo_dir, "/Logs/commit.log")
-    println(changed_script)
-    script {
-    sh '''
-            ls -l "${changed_script}"
-        '''
-
-    }
-//    def scripts = []
-//    for(line in f.readLines()){
-//        scripts.add(line.split())
-//    }
-//    println(scripts)
+    println([modified_files])
 }
