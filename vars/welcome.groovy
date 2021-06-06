@@ -17,11 +17,12 @@ def call() {
 
     def changed_script = Paths.get(repo_dir, "/Logs/commit.log")
     println(changed_script)
+    script {
     sh '''
-            ls -l ${changed_script}
+            ls -l "${changed_script}"
         '''
 
-
+    }
 //    def scripts = []
 //    for(line in f.readLines()){
 //        scripts.add(line.split())
