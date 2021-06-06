@@ -21,6 +21,7 @@ def call() {
     String LogsPath = new File("${repo_dir}", "/Logs").toString();
     println(LogsPath)
     File f = new File(LogsPath.trim() + "commit.log")
-    f.append(modified_files, new_files)
+    f.write(modified_files)
+    f.append(new_files)
     println(f.readLines())
 }
