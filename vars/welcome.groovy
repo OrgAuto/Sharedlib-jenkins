@@ -38,7 +38,7 @@ def call() {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
         def dot_extension = ".py"
-        println(fileName[0]-dot_extension)
+        println("File basename is : " + fileName[0]-dot_extension)
 
     }
 }
