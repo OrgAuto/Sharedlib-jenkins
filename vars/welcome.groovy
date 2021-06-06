@@ -16,9 +16,8 @@ def call() {
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
     def root= new File(repo_dir)
+    println("${root}")
     def full= new File('/Logs')
-    def myPath = root + full
-    println("${myPath}")
-
-
+    println("${full}")
+    println("${root}${full}")
 }
