@@ -23,4 +23,5 @@ def call() {
     StringBuilder s = new StringBuilder()
     s.append(root).append(full)
     println(s)
+    println("/Users/uprince/.jenkins/jobs/OrgAuto/jobs/demo-shared-lib/branches/main/workspace/Logs")
 }
