@@ -24,5 +24,10 @@ def call() {
 //    StringBuilder s = new StringBuilder()
 //    println(root+full)
 //    println(s)
+    String path1 = "/Users/uprince/.jenkins/jobs/OrgAuto/jobs/demo-shared-lib/branches/main/workspace/";
+    String path2 = "Logs";
+
+    String joinedPath = new File(path1, path2).toString();
+    println(joinedPath)
     println("/Users/uprince/.jenkins/jobs/OrgAuto/jobs/demo-shared-lib/branches/main/workspace/Logs")
 }
