@@ -37,8 +37,8 @@ def call() {
     println(f.readLines())
     def arr = f.readLines()
     for (i in arr) {
-        Path path = Paths.get(i)
-        println(path)
+//        Path path = Paths.get(i)
+        println(i)
     }
 
     f.delete()
