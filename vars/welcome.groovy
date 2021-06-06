@@ -24,18 +24,15 @@ def call() {
     String LogsPath = new File("${repo_dir}", "/Logs").toString();
     println(LogsPath)
     File f = new File(LogsPath.trim() + "commit.log")
-    println(deleted_files.length() + " Deleted Files \n")
+    println(deleted_files.split().length + " Deleted Files \n")
+
 //    for (val in deleted_files.split()){
 //        println(val)
 //    }
 //    println(modified_files)
 //    println(new_files)
-    f.append(modified_files, new_files)
-//    f.append(new_files)
+    f.write(modified_files)
+    f.append(new_files)
     println(f.readLines())
-    for (i in f.readLines()) {
-        Path my_path = Paths.get(i)
-        println(my_path)
-    }
     f.delete()
 }
