@@ -36,11 +36,11 @@ def call() {
     // Convert String to Path
     for (name in arr) {
         Path path = Paths.get("${name}")
-        println(path.class)
-        println(path.getFileName())
-
+        def fileName = path.getFileName()
+        def dot_extension = ".py"
+        if ((dot_extension == ".py") || (dot_extension == ".html")){
+            def file_basename = fileName-dot_extension
+            println(file_basename)
+        }
     }
-
-
-
 }
