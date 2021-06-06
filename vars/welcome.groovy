@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+import java.nio.file.Paths
 
 
 def call() {
@@ -21,14 +22,18 @@ def call() {
     String LogsPath = new File("${repo_dir}", "/Logs").toString();
     println(LogsPath)
     File f = new File(LogsPath.trim() + "commit.log")
-    println("Deleted Files are: \n")
-    for (val in deleted_files.split()){
-        println(val)
-    }
+    println(deleted_files.length() + " Deleted Files \n")
+//    for (val in deleted_files.split()){
+//        println(val)
+//    }
 //    println(modified_files)
 //    println(new_files)
     f.write(modified_files)
     f.append(", "+ new_files)
     println(f.readLines())
+    for (i in f.readLines()) {
+        Path my_path = Paths.get(i) as Path
+        println(my_path)
+    }
     f.delete()
 }
