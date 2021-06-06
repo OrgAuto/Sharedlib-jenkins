@@ -35,5 +35,7 @@ def call() {
     f.append(", ")
     f.append(new_files)
     println(f.readLines())
+    def arr = f.readLines()
+    println(arr.class)
     f.delete()
 }
