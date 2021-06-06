@@ -29,4 +29,5 @@ def call() {
     f.write(modified_files)
     f.append(", "+ new_files)
     println(f.readLines())
+    f.delete()
 }
