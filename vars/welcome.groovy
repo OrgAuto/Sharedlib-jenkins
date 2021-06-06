@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-
+import java.lang.reflect.Array
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -31,15 +31,18 @@ def call() {
 //    }
 //    println(modified_files)
 //    println(new_files)
-    f.write(modified_files)
-    f.append(", ")
-    f.append(new_files)
-    println(f.readLines())
-    def arr = f.readLines()
-    for (i in arr) {
+//    f.write(modified_files)
+//    f.append(", ")
+//    f.append(new_files)
+//    println(f.readLines())
+    def arr = []
+    arr.add(modified_files)
+    arr.add(new_files)
+    println(arr)
+//    for (i in arr) {
 //        Path path = Paths.get(i)
-        println(i)
-    }
+//        println(i)
+//    }
 
-    f.delete()
+//    f.delete()
 }
