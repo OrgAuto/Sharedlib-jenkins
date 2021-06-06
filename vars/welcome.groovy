@@ -37,8 +37,8 @@ def call() {
     for (name in arr) {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
-        def dot_extension = ".py"
-        println("File basename is : " + fileName[0]-dot_extension)
+        def extension = ("${name}".split("."))
+        println("File basename is : " + fileName[0]-extension)
 
     }
 }
