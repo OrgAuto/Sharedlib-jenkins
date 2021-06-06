@@ -15,13 +15,14 @@ def call() {
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
-    def root= new File(repo_dir)
+    String root= new File(repo_dir)
     println("${root}")
-    def full= new File('/Logs')
+    String full= new File('/Logs')
     println("${full}")
     println("${root}${full}")
+    println(root+full)
     StringBuilder s = new StringBuilder()
-    s.append(root).append(full)
+    println(root+full)
     println(s)
     println("/Users/uprince/.jenkins/jobs/OrgAuto/jobs/demo-shared-lib/branches/main/workspace/Logs")
 }
