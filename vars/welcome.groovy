@@ -34,7 +34,7 @@ def call() {
 //    for (file in modified_files){
 //        println("Modified: " + "${file}")
 //    }
-    for (added in "${new_files}"){
+    for (added in "${new_files}".split()){
         println("Added: " + added)
     }
 
