@@ -22,6 +22,6 @@ def call() {
     println(LogsPath)
     File f = new File(LogsPath.trim() + "commit.log")
     f.write(modified_files)
-    f.append(","+ new_files)
+    f.append(", "+ new_files)
     println(f.readLines())
 }
