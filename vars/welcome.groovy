@@ -31,9 +31,15 @@ def call() {
 //    }
 //    println(modified_files)
 //    println(new_files)
-    f.write(modified_files)
-    f.append(", ")
-    f.append(new_files)
+    for (file in modified_files){
+        f.write(file)
+    }
+    for (file in new_files){
+        f.append(file)
+    }
+//    f.write(modified_files)
+//    f.append(", ")
+//    f.append(new_files)
     def arr = f.readLines()
     println(arr[0])
 
