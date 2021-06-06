@@ -9,24 +9,12 @@ def call() {
     String cmd_top_level = "git rev-parse --show-toplevel"
     String cmd_commit = "git rev-parse HEAD"
 
-    String repo_dir = sh (returnStdout: true, script: cmd_top_level)
-    String current_commit_sha = sh(returnStdout: true, script: cmd_commit)
-    String modified_files = sh(returnStdout: true, script: cmd_modified)
-    String new_files = sh(returnStdout: true, script: cmd_added)
-    String deleted_files = sh(returnStdout: true, script: cmd_deleted)
+    String repo_dir = sh (returnStdout: true, script: cmd_top_level).trim()
+    String current_commit_sha = sh(returnStdout: true, script: cmd_commit).trim()
+    String modified_files = sh(returnStdout: true, script: cmd_modified).trim()
+    String new_files = sh(returnStdout: true, script: cmd_added).trim()
+    String deleted_files = sh(returnStdout: true, script: cmd_deleted).trim()
 
-    String root= new File(repo_dir)
-    println("${root}")
-    String full= new File(root,"/Logs")
-//    println("${full}")
-//    println("${root}${full}")
-    println(full)
-//    StringBuilder s = new StringBuilder()
-//    println(root+full)
-//    println(s)
-    String path1 = "/Users/uprince/.jenkins/jobs/OrgAuto/jobs/demo-shared-lib/branches/main/workspace/";
-    String path2 = "Logs";
-
-    String joinedPath = new File(root, full).toString();
+    String joinedPath = new File("${repo_dir}", "/Logs").toString();
     println(joinedPath)
 }
