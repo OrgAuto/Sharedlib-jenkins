@@ -16,7 +16,10 @@ def call() {
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
 
     def changed_script = Paths.get(repo_dir, "/Logs/commit.log")
-    changed_script.write(modified_files)
+    println(changed_script)
+    sh '''
+            ls -l ${changed_script}
+        '''
 
 
 //    def scripts = []
