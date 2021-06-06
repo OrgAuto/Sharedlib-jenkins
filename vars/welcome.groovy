@@ -34,9 +34,11 @@ def call() {
 //    for (file in modified_files){
 //        println("Modified: " + "${file}")
 //    }
+    def arr = []
     for (added in "${new_files}".split()){
-        println("Added: " + added)
+        arr.add(added)
     }
+    println("Added: " + arr)
 
 //    f.write(modified_files)
 //    f.append(", ")
