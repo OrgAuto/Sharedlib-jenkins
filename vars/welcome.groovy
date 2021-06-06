@@ -37,6 +37,7 @@ def call() {
     for (name in arr) {
         Path path = Paths.get("${name}")
         println(path.class)
+        println(path.getFileName())
 
     }
 
