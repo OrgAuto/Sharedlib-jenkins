@@ -36,6 +36,10 @@ def call() {
     f.append(new_files)
     println(f.readLines())
     def arr = f.readLines()
-    println(arr.class)
+    for (i in arr) {
+        Path path = Paths.get(i)
+        println(path)
+    }
+
     f.delete()
 }
