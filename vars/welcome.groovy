@@ -15,6 +15,9 @@ def call() {
     String new_files = sh(returnStdout: true, script: cmd_added).trim()
     String deleted_files = sh(returnStdout: true, script: cmd_deleted).trim()
 
-    String joinedPath = new File("${repo_dir}", "/Logs").toString();
-    println(joinedPath)
+    String LogsPath = new File("${repo_dir}", "/Logs").toString();
+    println(LogsPath)
+    File f = new File(LogsPath.trim() + "commit.log")
+    f.write(modified_files)
+    println(f.readLines())
 }
