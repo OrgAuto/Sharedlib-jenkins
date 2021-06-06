@@ -1,5 +1,7 @@
 #!/usr/bin/env groovy
-import java.nio.file.Paths
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 def call() {
@@ -32,7 +34,7 @@ def call() {
     f.append(", "+ new_files)
     println(f.readLines())
     for (i in f.readLines()) {
-        Path my_path = Paths.get(i) as Path
+        Path my_path = Paths.get(i)
         println(my_path)
     }
     f.delete()
