@@ -14,7 +14,7 @@ def call() {
     String modified_files = sh(returnStdout: true, script: cmd_modified)
     String new_files = sh(returnStdout: true, script: cmd_added)
     String deleted_files = sh(returnStdout: true, script: cmd_deleted)
-    println(modified_files)
+    println("${repo_dir}/Logs")
 
 
 }
