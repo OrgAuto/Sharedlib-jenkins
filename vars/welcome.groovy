@@ -26,12 +26,7 @@ def call() {
     File f = new File(LogsPath.trim() + "commit.log")
     println("${deleted_files}".split().length + " Deleted Files \n")
 
-//    for (val in deleted_files.split()){
-//        println(val)
-//    }
-//    println(modified_files)
-//    println(new_files)
-
+    // Prepare list of added and modified files
     def arr = []
     for (file in "${modified_files}".split()){
         arr.add(file)
@@ -39,19 +34,12 @@ def call() {
     for (added in "${new_files}".split()){
         arr.add(added)
     }
-
     println("Added: " + arr)
 
-//    f.write(modified_files)
-//    f.append(", ")
-//    f.append(new_files)
-//    def arr = f.readLines()
-//    println(arr[0])
-//
-//    for (i in arr) {
-//        Path path = Paths.get(i)
-//        println(path)
-//    }
+    for (name in arr) {
+        Path path = Paths.get("${name}")
+        println(path)
+    }
 
-//    f.delete()
+
 }
