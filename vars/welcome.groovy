@@ -38,9 +38,7 @@ def call() {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
         def dot_extension = ".py"
-        if ((dot_extension == ".py") || (dot_extension == ".html")){
-            def file_basename = fileName-dot_extension
-            println(file_basename)
-        }
+        println(fileName-dot_extension)
+
     }
 }
