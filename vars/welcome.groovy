@@ -20,4 +20,7 @@ def call() {
     def full= new File('/Logs')
     println("${full}")
     println("${root}${full}")
+    StringBuilder s = new StringBuilder()
+    s.append(root).append(full)
+    println(s)
 }
