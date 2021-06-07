@@ -44,7 +44,7 @@ def call() {
         if (index > 0) {
             String extension = myfile.substring(index + 1)
             println("File Extension is: \n" + extension)
-            println("File basename is : " + fileName[0]- "." + extension)
+            println("File basename is : " + fileName[0]-extension)
         }
 
 
