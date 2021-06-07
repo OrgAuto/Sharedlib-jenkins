@@ -36,8 +36,9 @@ def GetDeployScripts(DeltaScriptsList) {
     def deploy_scripts = []
     for (name in DeltaScriptsList) {
         Path path = Paths.get("${name}")
-        if (path.toString().contains("Logs")) {     // Get files matching path pattern
-            return deploy_scripts.add(path)
+        if (path.toString().contains("Logs")) {
+            // Get files matching path pattern
+            deploy_scripts.add(path)
         }
 
     }
