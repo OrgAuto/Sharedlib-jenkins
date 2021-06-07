@@ -48,11 +48,12 @@ def GetDeployScripts(DeltaScriptsList) {
 def GetExtension(FilePath) {
     def FileName = FilePath.getFileName()           // GET FILENAME WITHOUT PATH
     String my_file = FileName.toString()
-    int index = my_file.lastIndexOf('.')
-    if (index > 0) {
-        String extension = my_file.substring(index + 1)
-        println("File Extension is: \n" + extension)
-    def my_extension = "." + extension
+//    int index = my_file.lastIndexOf('.')
+//    if (index > 0) {
+//        String extension = my_file.substring(index + 1)
+//        println("File Extension is: \n" + extension)
+//    def my_extension = "." + extension
+    def my_extension = my_file.split("\\.")[1]
     return my_extension
     }
 }
