@@ -58,6 +58,13 @@ def GetExtension(FilePath) {
 //    }
 }
 
+def GetBaseName(FilePath, extension) {
+    def FileName = FilePath.getFileName()
+    def base_file = "${FileName}"-"${extension}"
+    return base_file
+}
+
+
 
 
 
