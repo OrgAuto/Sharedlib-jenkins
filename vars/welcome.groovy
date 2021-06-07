@@ -1,4 +1,6 @@
 #!/usr/bin/env groovy
+import org.apache.tools.ant.types.FileList
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.apache.commons.io.FilenameUtils;
@@ -38,8 +40,8 @@ def call() {
     for (name in arr) {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
-        println(fileName.getProperties())
-
+        println(fileName)
+        println(path.getName(0))
 //        println("File basename is : " + fileName[0]-extension)
 
     }
