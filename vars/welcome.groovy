@@ -8,7 +8,7 @@ def call() {
     String cmd_commit = "git rev-parse HEAD"
     String cmd_top_level = "git rev-parse --show-toplevel"
 
-    def repo_dir = sh (returnStdout: true, script: cmd_top_level).trim()
+    def repo_dir = sh (script: cmd_top_level).trim()
     String current_commit_sha = sh(returnStdout: true, script: cmd_commit).trim()
 
     String cmd_modified = "git log -m -1 --name-only --pretty=format: --diff-filter=M ${current_commit_sha}"
