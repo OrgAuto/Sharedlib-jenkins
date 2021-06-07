@@ -37,12 +37,9 @@ def GetDeployScripts(DeltaScriptsList) {
     for (name in DeltaScriptsList) {
         Path path = Paths.get("${name}")
         if (path.toString().contains("Logs")) {     // Get files matching path pattern
-            deploy_scripts.add(path)
+            return deploy_scripts.add(path)
         }
-        else {
-            println("File not deployable are: \n")
-            println("${path}")
-        }
+
     }
     return deploy_scripts
 }
