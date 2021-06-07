@@ -53,7 +53,7 @@ def GetExtension(FilePath) {
         String extension = my_file.substring(index + 1)
         println("File Extension is: \n" + extension)
     def my_extension = "." + extension
-    return my_extension.toString()
+    return my_extension
     }
 }
 
