@@ -55,12 +55,11 @@ def call() {
             println("File basename is : " + fileName[0]-"${myextension}")
             println("Content of: " + path)
             def my_repo = Paths.get("${repo_dir}")
-            println(my_repo)
             def data_file = "${my_repo}"+"/"+"${path}"
             def abs_dir = Paths.get("${data_file}")
             println(abs_dir)
-//            String content = data_file.text
-//            println(content)
+            String content = abs_dir.text
+            println(content)
 
         }
     }
