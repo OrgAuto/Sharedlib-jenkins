@@ -64,6 +64,14 @@ def GetBaseName(FilePath, extension) {
     return base_file
 }
 
+def GetScriptContent(FilePath, RepoDir) {
+    def my_repo = Paths.get("${RepoDir}")
+    def data_file = "${my_repo}"+"/"+"${FilePath}"
+    def abs_dir = Paths.get("${data_file}")
+    String content = abs_dir.text
+    return content
+}
+
 
 
 
