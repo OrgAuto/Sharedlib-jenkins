@@ -19,7 +19,7 @@ def GetDeltaFiles(commit_id) {
     String cmd_added = "git log -m -1 --name-only --pretty=format: --diff-filter=A ${commit_id}"
     String cmd_deleted = "git log -m -1 --name-only --pretty=format: --diff-filter=D ${commit_id}"
 
-    def modified_files = sh(returnStdout: true, script: cmd_modified).trim()
+    def modified_files = sh(returnStdout: true, script: 'set +x', cmd_modified, 'set -x').trim()
     def new_files = sh(returnStdout: true, script: cmd_added).trim()
     def deleted_files = sh(returnStdout: true, script: cmd_deleted).trim()
 
