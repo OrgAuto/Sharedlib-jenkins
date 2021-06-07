@@ -40,7 +40,8 @@ def GetDeployScripts(DeltaScriptsList) {
             deploy_scripts.add(path)
         }
         else {
-            println("No Matching deployable files")
+            println("File not deployable are: \n")
+            println("${path}")
         }
     }
     return deploy_scripts
