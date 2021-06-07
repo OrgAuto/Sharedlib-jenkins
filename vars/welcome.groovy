@@ -47,6 +47,12 @@ def call() {
             def myextension = "." + extension
             println("File basename is : " + fileName[0]-"${myextension}")
         }
+        def deploy_scripts = []
+        if (path.contains("Logs")) {
+            deploy_scripts.add(fileName)
+        }
+        println("Deployable Scripts : ")
+        println(deploy_scripts)
 
 
     }
