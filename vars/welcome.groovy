@@ -57,8 +57,9 @@ def call() {
             def my_repo = Paths.get("${repo_dir}")
             println(my_repo)
             def data_file = my_repo+path
-            String content = data_file.text
-            println(content)
+            println(data_file)
+//            String content = data_file.text
+//            println(content)
 
         }
     }
