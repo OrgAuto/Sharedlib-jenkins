@@ -34,11 +34,16 @@ def call() {
         arr.add(added)
     }
     println("Added: " + arr)
+    def deploy_scripts = []
+
     // Convert String to Path
     for (name in arr) {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
         println(fileName)
+        if (path.contains("Logs")) {
+            deploy_scripts.add(fileName)
+        }
         String myfile = fileName.toString()
         int index = myfile.lastIndexOf('.')
         if (index > 0) {
@@ -47,10 +52,7 @@ def call() {
             def myextension = "." + extension
             println("File basename is : " + fileName[0]-"${myextension}")
         }
-        def deploy_scripts = []
-        if (path.contains("Logs")) {
-            deploy_scripts.add(fileName)
-        }
+
         println("Deployable Scripts : ")
         println(deploy_scripts)
 
