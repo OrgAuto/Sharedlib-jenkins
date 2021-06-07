@@ -54,7 +54,8 @@ def call() {
             base_files.add("${only_name}"-"${myextension}")
             println("File basename is : " + fileName[0]-"${myextension}")
             println("Content of: " + path)
-            println(path.text)
+            def abs_dir = repo_dir+only_name
+            println(abs_dir)
         }
     }
     println("Delta Files: \n" + delta_files)
