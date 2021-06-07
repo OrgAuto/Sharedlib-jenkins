@@ -41,7 +41,7 @@ def call() {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
         println(fileName)
-        if (path.contains("Logs")) {
+        if (path.toString().contains("Logs")) {
             deploy_scripts.add(path)
         }
         String myfile = fileName.toString()
