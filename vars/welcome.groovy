@@ -53,7 +53,8 @@ def call() {
             def only_name = fileName[0]
             base_files.add("${only_name}"-"${myextension}")
             println("File basename is : " + fileName[0]-"${myextension}")
-            println()
+            println("Content of: " + fileName)
+            println(fileName.text)
         }
     }
     println("Delta Files: \n" + delta_files)
