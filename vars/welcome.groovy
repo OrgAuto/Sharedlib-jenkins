@@ -8,7 +8,7 @@ def call() {
     String cmd_commit = "git rev-parse HEAD"
     String cmd_top_level = "git rev-parse --show-toplevel"
 
-    String repo_dir = sh (returnStdout: true, script: cmd_top_level).trim()
+    def repo_dir = sh (returnStdout: true, script: cmd_top_level).trim()
     String current_commit_sha = sh(returnStdout: true, script: cmd_commit).trim()
 
     String cmd_modified = "git log -m -1 --name-only --pretty=format: --diff-filter=M ${current_commit_sha}"
@@ -54,8 +54,12 @@ def call() {
             base_files.add("${only_name}"-"${myextension}")
             println("File basename is : " + fileName[0]-"${myextension}")
             println("Content of: " + path)
-            def abs_dir = repo_dir+only_name
-            println(abs_dir)
+            def my_repo = Paths.get("${repo_dir}")
+            println(my_repo)
+            def data_file = my_repo+path
+            String content = data_file.text
+            println(content)
+
         }
     }
     println("Delta Files: \n" + delta_files)
