@@ -50,9 +50,10 @@ def call() {
             String extension = myfile.substring(index + 1)
             println("File Extension is: \n" + extension)
             def myextension = "." + extension
-            base_files.add(fileName[0]-"${myextension}")
+            def only_name = fileName[0]
+            base_files.add("${only_name}"-"${myextension}")
             println("File basename is : " + fileName[0]-"${myextension}")
-            println(fileName[0])
+            println()
         }
     }
     println("Delta Files: \n" + delta_files)
