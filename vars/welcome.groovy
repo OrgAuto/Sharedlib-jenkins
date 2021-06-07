@@ -35,6 +35,7 @@ def call() {
     }
 
     def deploy_scripts = []
+    def base_files = []
 
     // Convert String to Path
     for (name in delta_files) {
@@ -49,9 +50,11 @@ def call() {
             String extension = myfile.substring(index + 1)
             println("File Extension is: \n" + extension)
             def myextension = "." + extension
-            println("File basename is : " + fileName[0]-"${myextension}")
+            base_files.add(fileName[0]-"${myextension}")
+//            println("File basename is : " + fileName[0]-"${myextension}")
         }
     }
     println("Delta Files: \n" + delta_files)
+    println("Basenamed Files: \n" + base_files)
     println("Deployable Scripts : \n" + deploy_scripts)
 }
