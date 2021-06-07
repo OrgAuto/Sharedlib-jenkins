@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.io.File;
+//import java.io.File;
 
 def call() {
     println("Welcome ")
@@ -26,22 +26,21 @@ def call() {
     println("${deleted_files}".split().length + " Deleted Files \n")
 
     // Prepare list of added and modified files
-    def arr = []
+    def delta_files = []
     for (file in "${modified_files}".split()){
-        arr.add(file)
+        delta_files.add(file)
     }
     for (added in "${new_files}".split()){
-        arr.add(added)
+        delta_files.add(added)
     }
-    println("Added: " + arr)
+
     def deploy_scripts = []
 
     // Convert String to Path
-    for (name in arr) {
+    for (name in delta_files) {
         Path path = Paths.get("${name}")
-        def fileName = path.getFileName()
-        println(fileName)
-        if (path.toString().contains("Logs")) {
+        def fileName = path.getFileName()           // GET FILENAME WITHOUT PATH
+        if (path.toString().contains("Logs")) {     // Get files matching path pattern
             deploy_scripts.add(path)
         }
         String myfile = fileName.toString()
@@ -53,6 +52,6 @@ def call() {
             println("File basename is : " + fileName[0]-"${myextension}")
         }
     }
-    println("Deployable Scripts : ")
-    println(deploy_scripts)
+    println("Delta Files: \n" + delta_files)
+    println("Deployable Scripts : \n" + deploy_scripts)
 }
