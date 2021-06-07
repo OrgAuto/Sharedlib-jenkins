@@ -22,12 +22,12 @@ def call() {
     String current_commit_sha = sh(returnStdout: true, script: cmd_commit).trim()
     String cmd_modified = '''
                     set +x
-                    git log -m -1 --name-only --pretty=format: --diff-filter=M "${current_commit_sha}"
+                    git log -m -1 --name-only --pretty=format: --diff-filter=M HEAD
                     set -x
                 '''
     String cmd_added = '''
                     set +x
-                    git log -m -1 --name-only --pretty=format: --diff-filter=A "${current_commit_sha}"
+                    git log -m -1 --name-only --pretty=format: --diff-filter=A HEAD
                     set -x
                 '''
 
