@@ -55,7 +55,7 @@ def GetExtension(FilePath) {
 //    def my_extension = "." + extension
     def my_extension = my_file.split("\\.")[1]
     return my_extension
-    }
+//    }
 }
 
 
