@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
-import org.apache.tools.ant.types.FileList
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.apache.commons.io.FilenameUtils;
+import java.io.File;
 
 def call() {
     println("Welcome ")
@@ -41,6 +39,12 @@ def call() {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
         println(fileName)
+        String myfile = fileName.toString()
+        int index = myfile.lastIndexOf('.')
+        if (index > 0) {
+            String extension = myfile.substring(index + 1)
+            println("File Extension is: \n" + extension)
+        }
 //        println("File basename is : " + fileName[0]-extension)
 
     }
