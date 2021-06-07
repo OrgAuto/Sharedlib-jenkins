@@ -41,8 +41,6 @@ def call() {
         Path path = Paths.get("${name}")
         def fileName = path.getFileName()
         println(fileName)
-//        println(fileName.getName(0))
-        println(fileName.last())
 //        println("File basename is : " + fileName[0]-extension)
 
     }
