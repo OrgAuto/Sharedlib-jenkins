@@ -42,7 +42,7 @@ def call() {
         def fileName = path.getFileName()
         println(fileName)
         if (path.contains("Logs")) {
-            deploy_scripts.add(fileName)
+            deploy_scripts.add(path)
         }
         String myfile = fileName.toString()
         int index = myfile.lastIndexOf('.')
@@ -52,10 +52,7 @@ def call() {
             def myextension = "." + extension
             println("File basename is : " + fileName[0]-"${myextension}")
         }
-
-        println("Deployable Scripts : ")
-        println(deploy_scripts)
-
-
     }
+    println("Deployable Scripts : ")
+    println(deploy_scripts)
 }
