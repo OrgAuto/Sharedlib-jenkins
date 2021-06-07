@@ -58,12 +58,6 @@ def GetExtension(FilePath) {
     }
 }
 
-def commit = GetCommit()
-println(commit)
-def repo_dir = GetCRepoDir()
-println(repo_dir)
-def file_list = GetDeltaFiles(commit)
-println(GetDeltaFiles(commit))
-println(GetDeployScripts(file_list))
+
 
 
