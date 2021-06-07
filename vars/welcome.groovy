@@ -55,6 +55,6 @@ def call() {
         }
     }
     println("Delta Files: \n" + delta_files)
-    println("Basenamed Files: \n" + base_files)
+    println("Basename of the delta Files: \n" + base_files)
     println("Deployable Scripts : \n" + deploy_scripts)
 }
